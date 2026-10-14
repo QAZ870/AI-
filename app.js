@@ -1,6 +1,6 @@
 'use strict';
 const el=id=>document.getElementById(id);
-const simulatedBacktestConfig={initialCash:10000,costRate:.001,lotSize:100,entryIndex:0};
+const simulatedBacktestConfig={initialCash:100000,costRate:.001,lotSize:100,entryIndex:0};
 function chart(rows){
  const box=el('chart');box.replaceChildren();if(!rows.length){box.textContent='没有可展示的有效记录。';return;}
  const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 1040 280');svg.setAttribute('role','img');svg.setAttribute('aria-label','有效行情收盘价折线图');

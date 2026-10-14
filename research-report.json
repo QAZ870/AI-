@@ -1,0 +1,1498 @@
+{
+  "experiment": "ISE-direction-v1",
+  "rule_date": "2026-10-14",
+  "source": {
+    "name": "UCI ISTANBUL STOCK EXCHANGE",
+    "url": "https://archive.ics.uci.edu/dataset/247/istanbul+stock+exchange",
+    "doi": "10.24432/C54P4J",
+    "author": "Oguz Akbilgic (2013)",
+    "license": "CC BY 4.0",
+    "target_column": "first ISE / TL BASED",
+    "raw_count": 536,
+    "start": "2009-01-05",
+    "end": "2011-02-22",
+    "date_discrepancy": "UCI summary says Jun 5, 2009; Excel starts 2009-01-05. Excel dates retained.",
+    "sha256": "a30838316290a83a98a52a46c30174e0204c963c0877627954ebc74111668922",
+    "retrieved_date": "2026-10-14"
+  },
+  "config": {
+    "features": [
+      "lag_1",
+      "lag_2",
+      "lag_5",
+      "mean_5",
+      "std_5",
+      "mean_20",
+      "std_20"
+    ],
+    "warmup": 20,
+    "C_candidates": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "selected_C": 0.01,
+    "threshold": 0.5,
+    "seed": 42,
+    "refit_on_validation": false,
+    "majority_probability": 0.5869565217391305
+  },
+  "validation_candidates": [
+    {
+      "C": 0.01,
+      "validation_log_loss": 0.7061748660260551
+    },
+    {
+      "C": 0.1,
+      "validation_log_loss": 0.720795972246372
+    },
+    {
+      "C": 1.0,
+      "validation_log_loss": 0.7323409492634668
+    },
+    {
+      "C": 10.0,
+      "validation_log_loss": 0.7342745454463817
+    }
+  ],
+  "splits": {
+    "train": {
+      "start": "2009-02-02",
+      "end": "2009-12-31",
+      "count": 230,
+      "up_count": 135,
+      "model": {
+        "accuracy": 0.5869565217391305,
+        "balanced_accuracy": 0.5,
+        "log_loss": 0.6750520418236499,
+        "roc_auc": 0.5753606237816763,
+        "confusion_matrix": [
+          [
+            0,
+            95
+          ],
+          [
+            0,
+            135
+          ]
+        ]
+      },
+      "majority": {
+        "accuracy": 0.5869565217391305,
+        "balanced_accuracy": 0.5,
+        "log_loss": 0.6779471359178069,
+        "roc_auc": 0.5,
+        "confusion_matrix": [
+          [
+            0,
+            95
+          ],
+          [
+            0,
+            135
+          ]
+        ]
+      },
+      "persistence_accuracy": 0.5
+    },
+    "validation": {
+      "start": "2010-01-04",
+      "end": "2010-06-30",
+      "count": 126,
+      "up_count": 65,
+      "model": {
+        "accuracy": 0.5158730158730159,
+        "balanced_accuracy": 0.5,
+        "log_loss": 0.7061748660260551,
+        "roc_auc": 0.49255989911727616,
+        "confusion_matrix": [
+          [
+            0,
+            61
+          ],
+          [
+            0,
+            65
+          ]
+        ]
+      },
+      "majority": {
+        "accuracy": 0.5158730158730159,
+        "balanced_accuracy": 0.5,
+        "log_loss": 0.7029257296681882,
+        "roc_auc": 0.5,
+        "confusion_matrix": [
+          [
+            0,
+            61
+          ],
+          [
+            0,
+            65
+          ]
+        ]
+      },
+      "persistence_accuracy": 0.5158730158730159
+    },
+    "test": {
+      "start": "2010-07-01",
+      "end": "2011-02-22",
+      "count": 160,
+      "up_count": 96,
+      "model": {
+        "accuracy": 0.6,
+        "balanced_accuracy": 0.5,
+        "log_loss": 0.6734422688437945,
+        "roc_auc": 0.49690755208333337,
+        "confusion_matrix": [
+          [
+            0,
+            64
+          ],
+          [
+            0,
+            96
+          ]
+        ]
+      },
+      "majority": {
+        "accuracy": 0.6,
+        "balanced_accuracy": 0.5,
+        "log_loss": 0.6733636852199214,
+        "roc_auc": 0.5,
+        "confusion_matrix": [
+          [
+            0,
+            64
+          ],
+          [
+            0,
+            96
+          ]
+        ]
+      },
+      "persistence_accuracy": 0.55
+    }
+  },
+  "fitted": {
+    "mean": [
+      0.0029586989043478245,
+      0.0028793329565217373,
+      0.003176989917391302,
+      0.0030041854113043477,
+      0.014239634219690519,
+      0.0028915069497826114,
+      0.016777088936402226
+    ],
+    "scale": [
+      0.016976155878217363,
+      0.017042973101907895,
+      0.01742034484260795,
+      0.00792612990960824,
+      0.005369825427028563,
+      0.0043296378942254314,
+      0.0033628952942235265
+    ],
+    "coefficients": [
+      -0.004508712815682682,
+      -0.0004078817000618016,
+      -0.02291105536605719,
+      -0.0002159059688365177,
+      0.0347473174377648,
+      -0.04288720699709806,
+      -0.04559535127291346
+    ],
+    "intercept": 0.35169957464723084
+  },
+  "environment": {
+    "python": "3.13.14",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1",
+    "openpyxl": "3.1.5"
+  },
+  "predictions": [
+    {
+      "date": "2010-07-01",
+      "information_date": "2010-06-30",
+      "actual": 0,
+      "probability_up": 0.6122421105951236,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-02",
+      "information_date": "2010-07-01",
+      "actual": 1,
+      "probability_up": 0.6131357350259685,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-05",
+      "information_date": "2010-07-02",
+      "actual": 1,
+      "probability_up": 0.6089834242279074,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-06",
+      "information_date": "2010-07-05",
+      "actual": 1,
+      "probability_up": 0.61807886033584,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-07",
+      "information_date": "2010-07-06",
+      "actual": 1,
+      "probability_up": 0.6050924933866011,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-08",
+      "information_date": "2010-07-07",
+      "actual": 1,
+      "probability_up": 0.6059046834049918,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-09",
+      "information_date": "2010-07-08",
+      "actual": 0,
+      "probability_up": 0.5942055906062615,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-12",
+      "information_date": "2010-07-09",
+      "actual": 1,
+      "probability_up": 0.6011942320569127,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-13",
+      "information_date": "2010-07-12",
+      "actual": 1,
+      "probability_up": 0.595256357555377,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-14",
+      "information_date": "2010-07-13",
+      "actual": 1,
+      "probability_up": 0.5980647984888418,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-15",
+      "information_date": "2010-07-14",
+      "actual": 0,
+      "probability_up": 0.5957010728711974,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-16",
+      "information_date": "2010-07-15",
+      "actual": 1,
+      "probability_up": 0.6055665047197363,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-19",
+      "information_date": "2010-07-16",
+      "actual": 1,
+      "probability_up": 0.6013066487959162,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-20",
+      "information_date": "2010-07-19",
+      "actual": 1,
+      "probability_up": 0.5987104210500864,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-21",
+      "information_date": "2010-07-20",
+      "actual": 1,
+      "probability_up": 0.5991570458019599,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-22",
+      "information_date": "2010-07-21",
+      "actual": 1,
+      "probability_up": 0.6045323427933903,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-23",
+      "information_date": "2010-07-22",
+      "actual": 0,
+      "probability_up": 0.5962724092422467,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-26",
+      "information_date": "2010-07-23",
+      "actual": 1,
+      "probability_up": 0.599859891741427,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-27",
+      "information_date": "2010-07-26",
+      "actual": 1,
+      "probability_up": 0.6017475530697526,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-28",
+      "information_date": "2010-07-27",
+      "actual": 1,
+      "probability_up": 0.5956510118126402,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-29",
+      "information_date": "2010-07-28",
+      "actual": 1,
+      "probability_up": 0.5967902030782445,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-07-30",
+      "information_date": "2010-07-29",
+      "actual": 0,
+      "probability_up": 0.6016390116190171,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-02",
+      "information_date": "2010-07-30",
+      "actual": 1,
+      "probability_up": 0.6036644938850181,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-03",
+      "information_date": "2010-08-02",
+      "actual": 0,
+      "probability_up": 0.5983497166321038,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-04",
+      "information_date": "2010-08-03",
+      "actual": 0,
+      "probability_up": 0.6074420749087975,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-05",
+      "information_date": "2010-08-04",
+      "actual": 0,
+      "probability_up": 0.6059275530381958,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-06",
+      "information_date": "2010-08-05",
+      "actual": 1,
+      "probability_up": 0.6129492440736094,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-09",
+      "information_date": "2010-08-06",
+      "actual": 1,
+      "probability_up": 0.6009210523268205,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-10",
+      "information_date": "2010-08-09",
+      "actual": 0,
+      "probability_up": 0.6040171680665893,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-11",
+      "information_date": "2010-08-10",
+      "actual": 0,
+      "probability_up": 0.606028044675688,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-12",
+      "information_date": "2010-08-11",
+      "actual": 1,
+      "probability_up": 0.6102034386869724,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-13",
+      "information_date": "2010-08-12",
+      "actual": 1,
+      "probability_up": 0.6072445658397552,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-16",
+      "information_date": "2010-08-13",
+      "actual": 1,
+      "probability_up": 0.6070460364809054,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-17",
+      "information_date": "2010-08-16",
+      "actual": 1,
+      "probability_up": 0.6124097239970068,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-18",
+      "information_date": "2010-08-17",
+      "actual": 0,
+      "probability_up": 0.6123537936515829,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-19",
+      "information_date": "2010-08-18",
+      "actual": 0,
+      "probability_up": 0.6037884262720604,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-20",
+      "information_date": "2010-08-19",
+      "actual": 0,
+      "probability_up": 0.6117422568121607,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-23",
+      "information_date": "2010-08-20",
+      "actual": 1,
+      "probability_up": 0.6099814546362264,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-24",
+      "information_date": "2010-08-23",
+      "actual": 0,
+      "probability_up": 0.607778515902568,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-25",
+      "information_date": "2010-08-24",
+      "actual": 0,
+      "probability_up": 0.6119889428368879,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-26",
+      "information_date": "2010-08-25",
+      "actual": 1,
+      "probability_up": 0.6157391963731714,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-27",
+      "information_date": "2010-08-26",
+      "actual": 1,
+      "probability_up": 0.6135098651380988,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-08-31",
+      "information_date": "2010-08-27",
+      "actual": 1,
+      "probability_up": 0.6118866383259693,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-01",
+      "information_date": "2010-08-31",
+      "actual": 1,
+      "probability_up": 0.6161616784551597,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-02",
+      "information_date": "2010-09-01",
+      "actual": 1,
+      "probability_up": 0.6123104593008758,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-03",
+      "information_date": "2010-09-02",
+      "actual": 1,
+      "probability_up": 0.6017491018250963,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-06",
+      "information_date": "2010-09-03",
+      "actual": 1,
+      "probability_up": 0.6038868771589074,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-07",
+      "information_date": "2010-09-06",
+      "actual": 0,
+      "probability_up": 0.6029502259819389,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-08",
+      "information_date": "2010-09-07",
+      "actual": 0,
+      "probability_up": 0.6054115916910635,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-13",
+      "information_date": "2010-09-08",
+      "actual": 1,
+      "probability_up": 0.6050116477008115,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-14",
+      "information_date": "2010-09-13",
+      "actual": 1,
+      "probability_up": 0.6085605365308145,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-15",
+      "information_date": "2010-09-14",
+      "actual": 1,
+      "probability_up": 0.6100193816173557,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-16",
+      "information_date": "2010-09-15",
+      "actual": 1,
+      "probability_up": 0.6098382379209506,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-17",
+      "information_date": "2010-09-16",
+      "actual": 1,
+      "probability_up": 0.6066282291760066,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-20",
+      "information_date": "2010-09-17",
+      "actual": 1,
+      "probability_up": 0.5977906537466204,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-21",
+      "information_date": "2010-09-20",
+      "actual": 0,
+      "probability_up": 0.5965088656425869,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-22",
+      "information_date": "2010-09-21",
+      "actual": 1,
+      "probability_up": 0.5962609803149631,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-23",
+      "information_date": "2010-09-22",
+      "actual": 0,
+      "probability_up": 0.5946741820512682,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-24",
+      "information_date": "2010-09-23",
+      "actual": 1,
+      "probability_up": 0.5979079443876831,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-27",
+      "information_date": "2010-09-24",
+      "actual": 1,
+      "probability_up": 0.5962223354694173,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-28",
+      "information_date": "2010-09-27",
+      "actual": 1,
+      "probability_up": 0.5983297130634319,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-29",
+      "information_date": "2010-09-28",
+      "actual": 0,
+      "probability_up": 0.5980554338689016,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-09-30",
+      "information_date": "2010-09-29",
+      "actual": 1,
+      "probability_up": 0.6028546914674633,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-01",
+      "information_date": "2010-09-30",
+      "actual": 0,
+      "probability_up": 0.60035232945988,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-04",
+      "information_date": "2010-10-01",
+      "actual": 1,
+      "probability_up": 0.6062080402019061,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-05",
+      "information_date": "2010-10-04",
+      "actual": 1,
+      "probability_up": 0.6016695159762566,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-06",
+      "information_date": "2010-10-05",
+      "actual": 1,
+      "probability_up": 0.6033377430273815,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-07",
+      "information_date": "2010-10-06",
+      "actual": 0,
+      "probability_up": 0.6016729197952918,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-08",
+      "information_date": "2010-10-07",
+      "actual": 1,
+      "probability_up": 0.6083684639872018,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-11",
+      "information_date": "2010-10-08",
+      "actual": 1,
+      "probability_up": 0.5930093615501467,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-12",
+      "information_date": "2010-10-11",
+      "actual": 1,
+      "probability_up": 0.5971176499788461,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-13",
+      "information_date": "2010-10-12",
+      "actual": 1,
+      "probability_up": 0.5983580114871382,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-14",
+      "information_date": "2010-10-13",
+      "actual": 0,
+      "probability_up": 0.6038803137439286,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-15",
+      "information_date": "2010-10-14",
+      "actual": 1,
+      "probability_up": 0.6069276074357639,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-18",
+      "information_date": "2010-10-15",
+      "actual": 1,
+      "probability_up": 0.5977503374962044,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-19",
+      "information_date": "2010-10-18",
+      "actual": 0,
+      "probability_up": 0.5979538295305104,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-20",
+      "information_date": "2010-10-19",
+      "actual": 0,
+      "probability_up": 0.6005230180080172,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-21",
+      "information_date": "2010-10-20",
+      "actual": 1,
+      "probability_up": 0.6070042990980942,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-22",
+      "information_date": "2010-10-21",
+      "actual": 1,
+      "probability_up": 0.5948550769738125,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-25",
+      "information_date": "2010-10-22",
+      "actual": 0,
+      "probability_up": 0.5957039385990658,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-26",
+      "information_date": "2010-10-25",
+      "actual": 0,
+      "probability_up": 0.6012919502694508,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-10-27",
+      "information_date": "2010-10-26",
+      "actual": 0,
+      "probability_up": 0.6016490437039688,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-01",
+      "information_date": "2010-10-27",
+      "actual": 1,
+      "probability_up": 0.6036691575925418,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-02",
+      "information_date": "2010-11-01",
+      "actual": 0,
+      "probability_up": 0.6007391506519034,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-03",
+      "information_date": "2010-11-02",
+      "actual": 1,
+      "probability_up": 0.6026934133956238,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-04",
+      "information_date": "2010-11-03",
+      "actual": 1,
+      "probability_up": 0.6040247891553788,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-05",
+      "information_date": "2010-11-04",
+      "actual": 0,
+      "probability_up": 0.615281489289266,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-08",
+      "information_date": "2010-11-05",
+      "actual": 1,
+      "probability_up": 0.5964735842623877,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-09",
+      "information_date": "2010-11-08",
+      "actual": 1,
+      "probability_up": 0.6009505886681198,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-10",
+      "information_date": "2010-11-09",
+      "actual": 0,
+      "probability_up": 0.5947348374052841,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-11",
+      "information_date": "2010-11-10",
+      "actual": 0,
+      "probability_up": 0.5973210271967436,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-12",
+      "information_date": "2010-11-11",
+      "actual": 0,
+      "probability_up": 0.5979033380470749,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-15",
+      "information_date": "2010-11-12",
+      "actual": 1,
+      "probability_up": 0.598761653948868,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-22",
+      "information_date": "2010-11-15",
+      "actual": 0,
+      "probability_up": 0.5956115249738323,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-23",
+      "information_date": "2010-11-22",
+      "actual": 0,
+      "probability_up": 0.6106591776191695,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-24",
+      "information_date": "2010-11-23",
+      "actual": 1,
+      "probability_up": 0.6111969075793592,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-25",
+      "information_date": "2010-11-24",
+      "actual": 0,
+      "probability_up": 0.6109940954287514,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-26",
+      "information_date": "2010-11-25",
+      "actual": 0,
+      "probability_up": 0.6071739639770233,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-29",
+      "information_date": "2010-11-26",
+      "actual": 0,
+      "probability_up": 0.6220051935224655,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-11-30",
+      "information_date": "2010-11-29",
+      "actual": 1,
+      "probability_up": 0.623215482021187,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-01",
+      "information_date": "2010-11-30",
+      "actual": 1,
+      "probability_up": 0.6072032308152437,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-02",
+      "information_date": "2010-12-01",
+      "actual": 1,
+      "probability_up": 0.6087064214587129,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-03",
+      "information_date": "2010-12-02",
+      "actual": 0,
+      "probability_up": 0.6126028457254691,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-06",
+      "information_date": "2010-12-03",
+      "actual": 1,
+      "probability_up": 0.6179930963344009,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-07",
+      "information_date": "2010-12-06",
+      "actual": 1,
+      "probability_up": 0.5797541559993556,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-08",
+      "information_date": "2010-12-07",
+      "actual": 0,
+      "probability_up": 0.5810683887725278,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-09",
+      "information_date": "2010-12-08",
+      "actual": 0,
+      "probability_up": 0.5931933673326862,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-10",
+      "information_date": "2010-12-09",
+      "actual": 0,
+      "probability_up": 0.6089626629683573,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-13",
+      "information_date": "2010-12-10",
+      "actual": 1,
+      "probability_up": 0.607556953338429,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-14",
+      "information_date": "2010-12-13",
+      "actual": 1,
+      "probability_up": 0.6082623608035124,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-15",
+      "information_date": "2010-12-14",
+      "actual": 0,
+      "probability_up": 0.6094825424671878,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-16",
+      "information_date": "2010-12-15",
+      "actual": 0,
+      "probability_up": 0.6194138430671701,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-17",
+      "information_date": "2010-12-16",
+      "actual": 0,
+      "probability_up": 0.6141127592942813,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-20",
+      "information_date": "2010-12-17",
+      "actual": 0,
+      "probability_up": 0.6023984239104787,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-21",
+      "information_date": "2010-12-20",
+      "actual": 1,
+      "probability_up": 0.5963235934162298,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-22",
+      "information_date": "2010-12-21",
+      "actual": 1,
+      "probability_up": 0.6043180139692022,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-23",
+      "information_date": "2010-12-22",
+      "actual": 1,
+      "probability_up": 0.6060704080135652,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-24",
+      "information_date": "2010-12-23",
+      "actual": 1,
+      "probability_up": 0.5994611590913463,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-27",
+      "information_date": "2010-12-24",
+      "actual": 1,
+      "probability_up": 0.5885013942921314,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-28",
+      "information_date": "2010-12-27",
+      "actual": 1,
+      "probability_up": 0.5833038915295066,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-29",
+      "information_date": "2010-12-28",
+      "actual": 1,
+      "probability_up": 0.587097230108887,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-30",
+      "information_date": "2010-12-29",
+      "actual": 1,
+      "probability_up": 0.5870050528022736,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2010-12-31",
+      "information_date": "2010-12-30",
+      "actual": 0,
+      "probability_up": 0.5881680285488933,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-03",
+      "information_date": "2010-12-31",
+      "actual": 1,
+      "probability_up": 0.5965807141740425,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-04",
+      "information_date": "2011-01-03",
+      "actual": 1,
+      "probability_up": 0.5994062810413825,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-05",
+      "information_date": "2011-01-04",
+      "actual": 1,
+      "probability_up": 0.5981298524110077,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-06",
+      "information_date": "2011-01-05",
+      "actual": 1,
+      "probability_up": 0.597446022917791,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-07",
+      "information_date": "2011-01-06",
+      "actual": 0,
+      "probability_up": 0.6023619961461009,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-10",
+      "information_date": "2011-01-07",
+      "actual": 0,
+      "probability_up": 0.5903948203605042,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-11",
+      "information_date": "2011-01-10",
+      "actual": 0,
+      "probability_up": 0.6009971002284534,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-12",
+      "information_date": "2011-01-11",
+      "actual": 1,
+      "probability_up": 0.5994991215229739,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-13",
+      "information_date": "2011-01-12",
+      "actual": 1,
+      "probability_up": 0.5976559493800743,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-14",
+      "information_date": "2011-01-13",
+      "actual": 0,
+      "probability_up": 0.6023686701798702,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-17",
+      "information_date": "2011-01-14",
+      "actual": 0,
+      "probability_up": 0.6063821977449456,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-18",
+      "information_date": "2011-01-17",
+      "actual": 0,
+      "probability_up": 0.6037883935011363,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-19",
+      "information_date": "2011-01-18",
+      "actual": 1,
+      "probability_up": 0.6066367043176645,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-20",
+      "information_date": "2011-01-19",
+      "actual": 0,
+      "probability_up": 0.6053366681916313,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-21",
+      "information_date": "2011-01-20",
+      "actual": 1,
+      "probability_up": 0.6114519324382846,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-24",
+      "information_date": "2011-01-21",
+      "actual": 0,
+      "probability_up": 0.6151209474457766,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-25",
+      "information_date": "2011-01-24",
+      "actual": 0,
+      "probability_up": 0.612825722610722,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-26",
+      "information_date": "2011-01-25",
+      "actual": 1,
+      "probability_up": 0.6106826135360988,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-27",
+      "information_date": "2011-01-26",
+      "actual": 0,
+      "probability_up": 0.6165543396227557,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-28",
+      "information_date": "2011-01-27",
+      "actual": 0,
+      "probability_up": 0.608623382963543,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-01-31",
+      "information_date": "2011-01-28",
+      "actual": 1,
+      "probability_up": 0.6186544466669425,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-01",
+      "information_date": "2011-01-31",
+      "actual": 1,
+      "probability_up": 0.6216998424399593,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-02",
+      "information_date": "2011-02-01",
+      "actual": 1,
+      "probability_up": 0.6172516282314388,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-03",
+      "information_date": "2011-02-02",
+      "actual": 0,
+      "probability_up": 0.6257797404167085,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-04",
+      "information_date": "2011-02-03",
+      "actual": 1,
+      "probability_up": 0.6364747689435654,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-07",
+      "information_date": "2011-02-04",
+      "actual": 0,
+      "probability_up": 0.6134986565698753,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-08",
+      "information_date": "2011-02-07",
+      "actual": 1,
+      "probability_up": 0.6087326236487266,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-09",
+      "information_date": "2011-02-08",
+      "actual": 1,
+      "probability_up": 0.6083052934962347,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-10",
+      "information_date": "2011-02-09",
+      "actual": 0,
+      "probability_up": 0.6177852565012817,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-11",
+      "information_date": "2011-02-10",
+      "actual": 1,
+      "probability_up": 0.6034431274185346,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-14",
+      "information_date": "2011-02-11",
+      "actual": 0,
+      "probability_up": 0.6023893830769095,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-15",
+      "information_date": "2011-02-14",
+      "actual": 1,
+      "probability_up": 0.5981883329897463,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-16",
+      "information_date": "2011-02-15",
+      "actual": 1,
+      "probability_up": 0.5964748838966125,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-17",
+      "information_date": "2011-02-16",
+      "actual": 1,
+      "probability_up": 0.6027532862416833,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-18",
+      "information_date": "2011-02-17",
+      "actual": 1,
+      "probability_up": 0.5857821553797751,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-21",
+      "information_date": "2011-02-18",
+      "actual": 0,
+      "probability_up": 0.5909613272290724,
+      "predicted": 1,
+      "majority_predicted": 1
+    },
+    {
+      "date": "2011-02-22",
+      "information_date": "2011-02-21",
+      "actual": 0,
+      "probability_up": 0.5953748147732235,
+      "predicted": 1,
+      "majority_predicted": 1
+    }
+  ],
+  "code_sha256": "39fe17b710036f05d3a38daef031e29f2d871f677dad8f15306c26a59962627b",
+  "spec_sha256": "19247b52ae3a9857e1172a129cce0e258cc87c598b39ebf306aa3bf309911b89"
+}
